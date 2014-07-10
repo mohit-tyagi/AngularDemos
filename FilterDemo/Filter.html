@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ng-controller="MainCtrl">
+<head>
+    <meta charset="utf-8">
+    <title>Filter demo</title>
+
+</head>
+<body>
+<h1>The People App</h1>
+<h4>View People</h4>
+<div>
+
+<h1>With out Filter</h1>
+
+    <ul>
+
+        <li ng-repeat="person in people">
+            {{ person.name }} from {{ person.city }}, {{ person.state }}
+        </li>
+    </ul>
+    <h1>For Filter fill this</h1>
+
+    Search! <input type="text" ng-model="search" />
+    <ul>
+        <li ng-repeat="person in people | filter:search">
+            {{ person.name }} from {{ person.city }}, {{ person.state }}
+        </li>
+    </ul>
+
+
+    Enter the person's name: <input type="text" ng-model="person_name" required/>
+    <br />
+    <br />
+    Enter the person's city: <input type="text" ng-model="person_city" required />
+    <br />
+    <br />
+    Enter the person's state: <input type="text" ng-model="person_state" required />
+    <br />
+    <br />
+    <button ng-click="addPerson()">Add the Person!</button>
+
+</div>
+<script type="text/javascript" src="../FilterDemo/filter.js"></script>
+<script type="text/javascript" src="../lib/angular.js"></script>
+</body>
+</html>
